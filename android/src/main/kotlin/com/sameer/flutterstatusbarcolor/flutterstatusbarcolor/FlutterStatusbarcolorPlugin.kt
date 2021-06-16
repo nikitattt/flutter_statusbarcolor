@@ -31,7 +31,7 @@ class FlutterStatusbarcolorPlugin private constructor(private val activity: Acti
                 result.success(statusBarColor)
             }
             "setstatusbarcolor" -> {
-                val statusBarColor: Int = call.argument("color")!!
+                val statusBarColor: Int = call.argument("color")!!.toInt()
                 val animate: Boolean = call.argument("animate")!!
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     if (animate) {
@@ -64,7 +64,7 @@ class FlutterStatusbarcolorPlugin private constructor(private val activity: Acti
                 result.success(navigationBarColor)
             }
             "setnavigationbarcolor" -> {
-                val navigationBarColor: Int = call.argument("color")!!
+                val navigationBarColor: Int = call.argument("color")!!.toInt()
                 val animate: Boolean = call.argument("animate")!!
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     if (animate) {
